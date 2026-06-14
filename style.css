@@ -1,0 +1,652 @@
+/* ==========================================================================
+   1. GLOBAL & PAGE SETTINGS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* This keeps margins and padding from blowing up width calculations */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Total insurance policy against unwanted horizontal scrolling */
+}
+
+/* ==========================================================================
+   2. HEADER STYLES (Completely Isolated)
+   ========================================================================== */
+.site-header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(43, 22, 22, 0.15); /* Softened the heavy shadow color slightly */
+  position: relative;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the header container on huge screens */
+  padding: 20px 40px;
+}
+
+.logo a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #111111;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #555555;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #000000;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #91754E;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #755c3c;
+}
+
+/* ==========================================================================
+   3. MAIN HERO CONTENT STYLES (Completely Isolated)
+   ========================================================================== */
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 80px auto 0 auto; /* Added top margin to space it perfectly down from the header */
+  padding: 0 40px;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 50%; /* Keeps text constrained to half the layout width */
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 45%; /* Keeps image constrained to its side of the column */
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Hero elements decoration */
+.topicheading {
+  background-color: #ada395;
+  display: inline-block;
+  padding: 6px 22px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.topicheading h2 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   HERO CTA LINKS (STYLED LIKE THE HEADER BUTTON)
+   ========================================================================== */
+.cta-buttons {
+  display: flex;       /* Sits the links side-by-side */
+  gap: 15px;           /* Clean spacing between the buttons */
+  margin-top: 35px;    /* Spaces them down from the paragraph text */
+}
+
+/* Base style for BOTH hero links to match the "Get in touch" button shape */
+.cta-buttons a {
+  display: inline-block;
+  padding: 10px 20px;     /* Exact same padding as your .btn-cta button */
+  border-radius: 30px;    /* Perfect rounded pill shape */
+  text-decoration: none;  /* Removes the default link underline */
+  font-weight: 500;       /* Exact same font weight as .btn-cta */
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;    /* Prevents text from breaking onto two lines */
+  transition: background-color 0.2s ease; /* Smooth hover transition */
+}
+
+/* 1. "Book a discovery call" Link (Matches Get in touch color) */
+.cta-buttons a[href="#discovery-call"],
+.cta-buttons a[href="discovery-call"] {
+  background-color: #91754E; /* Signature dark brand color */
+  color: #ffffff;            /* White text */
+}
+
+.cta-buttons a[href="#discovery-call"]:hover,
+.cta-buttons a[href="discovery-call"]:hover {
+  background-color: #755c3c; /* Matches the header button hover color */
+}
+
+/* 2. "Explore services" Link (Secondary Clean Style) */
+.cta-buttons a[href="#our-services"],
+.cta-buttons a[href="our-services"] {
+  background-color: #f0f0f0; /* Light gray to complement the main button */
+  color: #111111;            /* Dark readable text */
+}
+
+.cta-buttons a[href="#our-services"]:hover,
+.cta-buttons a[href="our-services"]:hover {
+  background-color: #e2e2e2d7; /* Slightly darker gray on hover */
+}
+
+
+
+/* ==========================================================================
+   SERVICES SECTION STYLES
+   ========================================================================== */
+.services-section {
+  max-width: 1200px;
+  margin: 100px auto;     /* Spaces this entire section down from your hero section */
+  padding: 0 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Section Title Header Elements --- */
+.services-header {
+  margin-bottom: 50px;    /* Spaces header away from the cards below */
+  max-width: 650px;       /* Keeps text from spanning too far across the page */
+}
+
+.section-tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #91754E;         /* Your signature brown brand color */
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.services-header h2 {
+  font-size: 2.3rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.05rem;
+  color: #777777;
+  line-height: 1.6;
+}
+
+/* --- Cards Container (The Flex Engine) --- */
+.services-grid {
+  display: flex;
+  justify-content: space-between; /* Spreads the 4 cards perfectly across the space */
+  gap: 20px;                      /* Clean spacing gap between the cards */
+}
+
+/* --- Individual Service Card Style --- */
+.service-card {
+  flex: 1;                        /* Forces all cards to take up identical layout widths */
+  background-color: #faf7f2;      /* Off-white background matching the image mockup */
+  border: 1px solid #e2ded8;      /* Subtle border boundary */
+  border-radius: 16px;            /* Sleek rounded card borders */
+  padding: 30px 24px;             /* Interior breathing room for the content */
+  display: flex;
+  flex-direction: column;         /* Stacks elements vertically */
+  align-items: flex-start;        /* Aligns all inner text/icons to the left */
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+/* Hover element for visual flair */
+.service-card:hover {
+  transform: translateY(-5px);    /* Elegant subtle pop lift up on hover */
+  box-shadow: 0 10px 20px rgba(145, 117, 78, 0.08);
+}
+
+/* --- Card Mini Elements --- */
+.card-icon {
+  background-color: #ada395;      /* Slate-brown tone background circle */
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;            /* Square-rounded style */
+  display: flex;
+  align-items: center;            /* Centering placeholders perfectly */
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.icon-placeholder {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+
+
+/* ==========================================================================
+   ABOUT US SECTION STYLES
+   ========================================================================== */
+.about-section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns text and the quote card */
+  gap: 80px;           /* Gives healthy breathing room between columns */
+}
+
+/* --- Left Column Logic --- */
+.about-content {
+  flex: 1.2;          /* Gives the text side slightly more operational width */
+  max-width: 55%;
+}
+
+.about-content h2 {
+  font-size: 2.6rem;
+  color: #111111;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* --- Trusted By Logo Styles --- */
+.trusted-by-container {
+  margin-top: 50px;
+}
+
+.trusted-title-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.trusted-title-row .line {
+  flex: 1;
+  height: 1px;
+  background-color: #e2ded8; /* Clean thin divider line */
+}
+
+.trusted-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888888;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+}
+
+.client-logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #777777; /* Subtle text representation for logos */
+  letter-spacing: -0.5px;
+}
+
+/* --- Right Column / Testimonial Logic --- */
+.about-testimonial {
+  flex: 1;
+  max-width: 45%;
+}
+
+.testimonial-card {
+  background-color: #eae5db; /* Warm beige tone background from mockup */
+  border-radius: 24px;
+  padding: 50px 40px;
+  position: relative;
+  overflow: hidden;         /* Clips the decorative background circles */
+  z-index: 1;
+}
+
+/* Decorative abstract layout circles */
+.testimonial-card::before,
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  background-color: #dfd9ce; /* Slightly darker shade for circles */
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.testimonial-card::before {
+  width: 140px;
+  height: 140px;
+  top: -40px;
+  right: -30px;
+}
+
+.testimonial-card::after {
+  width: 120px;
+  height: 120px;
+  bottom: -40px;
+  left: -20px;
+}
+
+.quote-text {
+  font-size: 1.55rem;
+  color: #111111;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 46px;
+  height: 46px;
+  background-color: #91754E; /* Dark brand accent color */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.author-info h4 {
+  font-size: 0.95rem;
+  color: #111111;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.author-info p {
+  font-size: 0.8rem;
+  color: #666666;
+  margin: 0;
+}
+
+
+
+
+
+/* ==========================================================================
+   1. STATS SECTION STYLES
+   ========================================================================== */
+.stats-section {
+  width: 100%;
+  background-color: #faf7f2; /* Matches the clean off-white block background */
+  padding: 60px 0;
+  border-bottom: 1px solid #e2ded8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666666;
+  text-transform: capitalize;
+}
+
+/* ==========================================================================
+   2. FINAL CTA BANNER STYLES
+   ========================================================================== */
+.final-cta-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cta-banner-container {
+  background-color: #91754E; /* Your signature rich brown brand tone */
+  border-radius: 28px;       /* Smoothly rounded container edge corners */
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;          /* Clips the decorative background shapes */
+  z-index: 1;
+}
+
+/* Decorative abstract layout circles inside the banner container */
+.cta-banner-container::before,
+.cta-banner-container::after {
+  content: '';
+  position: absolute;
+  background-color: #a38964; /* Slightly lighter shade for the curve contrast */
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Top center circle accent */
+.cta-banner-container::before {
+  width: 320px;
+  height: 320px;
+  top: -220px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bottom right corner circle accent */
+.cta-banner-container::after {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  right: -50px;
+}
+
+.cta-banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-banner-content h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.cta-banner-content p {
+  font-size: 1.05rem;
+  color: #f5f2eb; /* Soft cream text color for legibility against brown background */
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* --- Banner Button Layout Styles --- */
+.cta-banner-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.cta-banner-buttons a {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* Solid White Call To Action Button */
+.btn-banner-primary {
+  background-color: #ffffff;
+  color: #91754E;
+}
+
+.btn-banner-primary:hover {
+  background-color: #f5f2eb;
+}
+
+/* Outlined Transparent Action Button */
+.btn-banner-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-banner-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+/* ==========================================================================
+   FOOTER SECTION STYLES
+   ========================================================================== */
+.site-footer {
+  width: 100%;
+  background-color: #faf7f2;   /* Matches the clean off-white block background */
+  border-top: 1px solid #e2ded8; /* Clean divider line separating it from above contents */
+  padding: 60px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Spreads brand left, nav center, copyright right */
+  align-items: center;            /* Perfectly centers them all vertically */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* --- Left Column: Brand Name Style --- */
+.footer-brand a {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111111;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* --- Center Column: Navigation Layout --- */
+.footer-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;                   /* Even spacing between the footer links */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-list a {
+  text-decoration: none;
+  color: #666666;              /* Muted text color matching footer page4.png mockup */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-list a:hover {
+  color: #111111;              /* Elegant darken transition on hover */
+}
+
+/* --- Right Column: Copyright Style --- */
+.footer-copyright p {
+  font-size: 0.85rem;
+  color: #777777;
+  white-space: nowrap;
+  margin: 0;
+}
