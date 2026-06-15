@@ -11,6 +11,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
   overflow-x: hidden; /* Total insurance policy against unwanted horizontal scrolling */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
